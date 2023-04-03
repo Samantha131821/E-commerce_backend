@@ -16,10 +16,10 @@ router.get('/', (req, res) => {
     model: Tag,
     attributes: ['id', 'tag_name']
   }]
-  }).then(dbProductData => res.json(dbProductData).catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  }))
+  }).then(dbProductData => res.json(dbProductData)
+    ).catch(err => {
+    console.log("Error", err);
+  })
 });
 
 // get one product
